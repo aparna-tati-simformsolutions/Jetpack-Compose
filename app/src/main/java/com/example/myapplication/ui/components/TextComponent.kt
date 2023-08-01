@@ -1,20 +1,22 @@
 package com.example.myapplication.ui.components
 
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shadow
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.buildAnnotatedString
+import androidx.compose.ui.text.*
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextDecoration
-import androidx.compose.ui.text.withStyle
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
@@ -32,6 +34,10 @@ fun TextComponent() {
         TextWithFontFamily(text = text)
         TextUnderlineProperty(text = text)
         TextLineThroughProperty(text = text)
+        TextWithCenterAlignment(text = text)
+        ParagraphStyle()
+        TextWithLongText(text = text)
+        TextWithLongTextOverflowProperty(text = text)
     }
 }
 
@@ -106,4 +112,30 @@ fun TextUnderlineProperty(text: String) {
 @Composable
 fun TextLineThroughProperty(text: String) {
     Text(text = text, style = TextStyle(textDecoration = TextDecoration.LineThrough))
+}
+
+@Composable
+fun TextWithCenterAlignment(text: String) {
+    Text(text = text, textAlign = TextAlign.Right, modifier = Modifier.width(150.dp))
+}
+
+@Composable
+fun ParagraphStyle() {
+    Text(text = buildAnnotatedString {
+        withStyle(style = ParagraphStyle(lineHeight = 30.sp)) {
+            append("Hello \n")
+        }
+        append("world")
+    })
+}
+
+@Composable
+fun TextWithLongText(text: String) {
+    Text(text = text.repeat(50), maxLines = 3)
+    Text(text = "\n")
+}
+
+@Composable
+fun TextWithLongTextOverflowProperty(text: String) {
+    Text(text = text.repeat(50), maxLines = 3, overflow = TextOverflow.Ellipsis)
 }

@@ -15,5 +15,11 @@ fun Components(navController: NavController) {
         }) {
             Text(text = "Text Component")
         }
+        
+        Button(onClick = {
+            navController.navigate(Screens.TextField.route)
+        }) {
+            Text(text = "TextField Component")
+        }
     }
 }
