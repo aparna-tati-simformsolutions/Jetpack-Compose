@@ -5,4 +5,6 @@ sealed class Screens(val route: String) {
     object Text: Screens("Text_Screen")
     object TextField: Screens("Textfield_Screen")
     object Button: Screens("Button_Screen")
+
+    object Layouts: Screens("Layout_screen")
 }

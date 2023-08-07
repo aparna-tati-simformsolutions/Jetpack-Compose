@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.myapplication.ui.components.ButtonComponent
 import com.example.myapplication.ui.components.Components
+import com.example.myapplication.ui.components.Layouts
 import com.example.myapplication.ui.components.TextComponent
 import com.example.myapplication.ui.components.TextFieldComponent
 
@@ -26,6 +27,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.Button.route) {
             ButtonComponent()
+        }
+        composable(route = Screens.Layouts.route) {
+            Layouts()
         }
     }
 }

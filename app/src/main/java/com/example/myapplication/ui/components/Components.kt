@@ -27,5 +27,11 @@ fun Components(navController: NavController) {
         }) {
             Text(text = "Button Component")
         }
+        
+        Button(onClick = {
+            navController.navigate(Screens.Layouts.route)
+        }) {
+            Text(text = "Layouts")
+        }
     }
 }
