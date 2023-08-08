@@ -17,7 +17,9 @@ import com.example.myapplication.navigation.Screens
 @Composable
 fun Components(navController: NavController) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(all = 30.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(all = 30.dp),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -49,6 +51,12 @@ fun Components(navController: NavController) {
             navController.navigate(Screens.Modifiers.route)
         }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Modifiers")
+        }
+
+        Button(onClick = {
+            navController.navigate(Screens.List.route)
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "List")
         }
     }
 }
