@@ -58,5 +58,11 @@ fun Components(navController: NavController) {
         }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "List")
         }
+
+        Button(onClick = {
+            navController.navigate(Screens.SimpleGrid.route)
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Grid")
+        }
     }
 }

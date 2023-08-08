@@ -10,6 +10,7 @@ import com.example.myapplication.ui.components.CustomList
 import com.example.myapplication.ui.components.Layouts
 import com.example.myapplication.ui.components.ListComponent
 import com.example.myapplication.ui.components.Modifiers
+import com.example.myapplication.ui.components.SimpleGrid
 import com.example.myapplication.ui.components.SimpleList
 import com.example.myapplication.ui.components.TextComponent
 import com.example.myapplication.ui.components.TextFieldComponent
@@ -46,6 +47,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.CustomList.route) {
             CustomList()
+        }
+        composable(route = Screens.SimpleGrid.route) {
+            SimpleGrid()
         }
     }
 }
