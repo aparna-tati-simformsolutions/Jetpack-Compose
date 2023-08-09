@@ -64,5 +64,11 @@ fun Components(navController: NavController) {
         }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Grid")
         }
+
+        Button(onClick = {
+            navController.navigate(Screens.Scaffold.route)
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Scaffold")
+        }
     }
 }

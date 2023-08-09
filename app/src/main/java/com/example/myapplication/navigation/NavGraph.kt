@@ -7,10 +7,15 @@ import androidx.navigation.compose.composable
 import com.example.myapplication.ui.components.ButtonComponent
 import com.example.myapplication.ui.components.Components
 import com.example.myapplication.ui.components.CustomList
+import com.example.myapplication.ui.components.HomeScreen
+import com.example.myapplication.ui.components.JobScreen
 import com.example.myapplication.ui.components.Layouts
 import com.example.myapplication.ui.components.ListComponent
 import com.example.myapplication.ui.components.Modifiers
-import com.example.myapplication.ui.components.SimpleGrid
+import com.example.myapplication.ui.components.MyNetworkScreen
+import com.example.myapplication.ui.components.NotificationScreen
+import com.example.myapplication.ui.components.PostScreen
+import com.example.myapplication.ui.components.ScaffoldComponent
 import com.example.myapplication.ui.components.SimpleList
 import com.example.myapplication.ui.components.TextComponent
 import com.example.myapplication.ui.components.TextFieldComponent
@@ -49,7 +54,25 @@ fun NavGraph(navController: NavHostController) {
             CustomList()
         }
         composable(route = Screens.SimpleGrid.route) {
-            SimpleGrid()
+//            SimpleGrid()
+        }
+        composable(route = Screens.Scaffold.route) {
+            ScaffoldComponent()
+        }
+        composable(route = BottomNavigationScreens.Home.screen_route) {
+            HomeScreen()
+        }
+        composable(route = BottomNavigationScreens.Post.screen_route) {
+            PostScreen()
+        }
+        composable(route = BottomNavigationScreens.MyNetwork.screen_route) {
+            MyNetworkScreen()
+        }
+        composable(route = BottomNavigationScreens.Jobs.screen_route) {
+            JobScreen()
+        }
+        composable(route = BottomNavigationScreens.Notification.screen_route) {
+            NotificationScreen()
         }
     }
 }
