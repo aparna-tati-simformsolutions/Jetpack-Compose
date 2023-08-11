@@ -56,19 +56,25 @@ fun Components(navController: NavController) {
         Button(onClick = {
             navController.navigate(Screens.List.route)
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "List")
+            Text(text = "List Component")
         }
 
         Button(onClick = {
             navController.navigate(Screens.SimpleGrid.route)
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Grid")
+            Text(text = "Grid Component")
         }
 
         Button(onClick = {
             navController.navigate(Screens.Scaffold.route)
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Scaffold")
+            Text(text = "Scaffold Component")
+        }
+
+        Button(onClick = {
+            navController.navigate(Screens.Card.route)
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Card Component")
         }
     }
 }

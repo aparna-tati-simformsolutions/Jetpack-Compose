@@ -12,4 +12,5 @@ sealed class Screens(val route: String) {
     object CustomList: Screens("Custom_List_Screen")
     object SimpleGrid: Screens("Simple_Grid_Screen")
     object Scaffold: Screens("Scaffold_Screen")
+    object Card: Screens("Card_Screen")
 }

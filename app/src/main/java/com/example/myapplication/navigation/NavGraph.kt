@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.myapplication.ui.components.ButtonComponent
+import com.example.myapplication.ui.components.CardComponent
 import com.example.myapplication.ui.components.Components
 import com.example.myapplication.ui.components.CustomList
 import com.example.myapplication.ui.components.HomeScreen
@@ -73,6 +74,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = BottomNavigationScreens.Notification.screen_route) {
             NotificationScreen()
+        }
+        composable(route = Screens.Card.route) {
+            CardComponent()
         }
     }
 }

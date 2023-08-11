@@ -2,14 +2,18 @@ package com.example.myapplication.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.material.BottomNavigation
 import androidx.compose.material.BottomNavigationItem
 import androidx.compose.material.DrawerValue
+import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.Scaffold
+import androidx.compose.material.SnackbarResult
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.material.icons.Icons
@@ -26,6 +30,7 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -50,10 +55,23 @@ fun ScaffoldComponent() {
                 }
             })
         },
-        bottomBar = { BottomAppBarContent(navController = navController) }
-    ) {
-        NavGraph(navController = navController)
-    }
+        bottomBar = { BottomAppBarContent(navController = navController) },
+        content = { Body() },
+        drawerContent = { DrawerComponent() },
+        floatingActionButton = {
+            FloatingActionButton(
+                onClick = {
+                    coroutineScope.launch {
+                        when(scaffoldState.snackbarHostState.showSnackbar(message = "Snack Bar", actionLabel = "Dismiss")) {
+                            SnackbarResult.ActionPerformed -> {}
+                            SnackbarResult.Dismissed -> {}
+                        }
+                    }
+                }) {
+                    Text(text = "X")
+            }
+        }
+    )
 }
 
 @Composable
@@ -67,6 +85,32 @@ fun TopAppBarContent(onMenuClicked: () -> Unit) {
             tint = Color.White
         ) }
     )
+}
+
+@Composable
+fun DrawerComponent() {
+    Column(
+        Modifier
+            .background(Color.White)
+            .fillMaxSize()
+    ) {
+        repeat(5) { item ->
+            Text(text = "Item number $item", modifier = Modifier.padding(8.dp), color = Color.Black)
+        }
+    }
+}
+
+@Composable
+fun Body() {
+    Column(
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.White)
+    ) {
+        Text(text = "Body Content", color = Color(0xFF0F9D58))
+    }
 }
 
 @Composable
