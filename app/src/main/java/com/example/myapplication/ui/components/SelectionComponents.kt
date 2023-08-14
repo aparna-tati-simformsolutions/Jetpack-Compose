@@ -30,5 +30,10 @@ fun SelectionComponents(navController: NavController) {
             Text(text = "RadioButton")
         }
 
+        Button(onClick = {
+            navController.navigate(Screens.Slider.route)
+        }) {
+            Text(text = "Slider")
+        }
     }
 }
