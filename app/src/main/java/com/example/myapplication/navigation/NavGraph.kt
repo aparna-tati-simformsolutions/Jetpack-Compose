@@ -17,6 +17,7 @@ import com.example.myapplication.ui.components.Modifiers
 import com.example.myapplication.ui.components.MyNetworkScreen
 import com.example.myapplication.ui.components.NotificationScreen
 import com.example.myapplication.ui.components.PostScreen
+import com.example.myapplication.ui.components.RadioButtonComponent
 import com.example.myapplication.ui.components.ScaffoldComponent
 import com.example.myapplication.ui.components.SelectionComponents
 import com.example.myapplication.ui.components.SimpleList
@@ -85,6 +86,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.CheckBox.route) {
             CheckBoxComponent()
+        }
+        composable(route = Screens.RadioButton.route) {
+            RadioButtonComponent()
         }
     }
 }

@@ -23,5 +23,12 @@ fun SelectionComponents(navController: NavController) {
         }) {
             Text(text = "CheckBox")
         }
+
+        Button(onClick = {
+            navController.navigate(Screens.RadioButton.route)
+        }) {
+            Text(text = "RadioButton")
+        }
+
     }
 }
