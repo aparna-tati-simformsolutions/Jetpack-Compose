@@ -13,4 +13,6 @@ sealed class Screens(val route: String) {
     object SimpleGrid: Screens("Simple_Grid_Screen")
     object Scaffold: Screens("Scaffold_Screen")
     object Card: Screens("Card_Screen")
+    object SelectionComponent: Screens("Selection_Components_Screen")
+    object CheckBox: Screens("Check_Box_Screen")
 }

@@ -76,5 +76,11 @@ fun Components(navController: NavController) {
         }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Card Component")
         }
+
+        Button(onClick = {
+            navController.navigate(Screens.SelectionComponent.route)
+        }, modifier = Modifier.fillMaxWidth()) {
+            Text(text = "Selection Components")
+        }
     }
 }

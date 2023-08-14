@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.myapplication.ui.components.ButtonComponent
 import com.example.myapplication.ui.components.CardComponent
+import com.example.myapplication.ui.components.CheckBoxComponent
 import com.example.myapplication.ui.components.Components
 import com.example.myapplication.ui.components.CustomList
 import com.example.myapplication.ui.components.HomeScreen
@@ -17,6 +18,7 @@ import com.example.myapplication.ui.components.MyNetworkScreen
 import com.example.myapplication.ui.components.NotificationScreen
 import com.example.myapplication.ui.components.PostScreen
 import com.example.myapplication.ui.components.ScaffoldComponent
+import com.example.myapplication.ui.components.SelectionComponents
 import com.example.myapplication.ui.components.SimpleList
 import com.example.myapplication.ui.components.TextComponent
 import com.example.myapplication.ui.components.TextFieldComponent
@@ -77,6 +79,12 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.Card.route) {
             CardComponent()
+        }
+        composable(route = Screens.SelectionComponent.route) {
+            SelectionComponents(navController)
+        }
+        composable(route = Screens.CheckBox.route) {
+            CheckBoxComponent()
         }
     }
 }
