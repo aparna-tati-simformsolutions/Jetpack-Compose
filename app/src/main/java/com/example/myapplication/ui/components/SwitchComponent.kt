@@ -7,13 +7,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Button
 import androidx.compose.material.Card
 import androidx.compose.material.Icon
+import androidx.compose.material.Snackbar
 import androidx.compose.material.Switch
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.CenterVertically
 import androidx.compose.ui.Modifier
@@ -24,12 +27,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.myapplication.R
+import kotlinx.coroutines.launch
 
 @Composable
 fun SwitchComponent() {
     Column {
         SimpleSwitch()
         CustomSwitch()
+        SnackBarComponent()
     }
 }
 
@@ -83,10 +88,43 @@ fun CustomSwitch() {
                         text = "Off",
                         style = TextStyle(fontSize = 12.sp, fontWeight = FontWeight.W400),
                         color = Color.White,
-                        modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+                        modifier = Modifier
+                            .padding(start = 10.dp, end = 10.dp)
                             .align(CenterVertically)
                     )
                 }
+            }
+        }
+    }
+}
+
+@Composable
+fun SnackBarComponent() {
+    Column {
+        val (snackbarVisibleState, setSnackBarState) = remember { mutableStateOf(false) }
+        val coroutineScope = rememberCoroutineScope()
+
+        Button(onClick = { setSnackBarState(!snackbarVisibleState) }) {
+            if (snackbarVisibleState) {
+                Text("Hide Snackbar")
+            } else {
+                Text("Show Snackbar")
+            }
+        }
+        if (snackbarVisibleState) {
+            Snackbar(
+                action = {
+                    Button(onClick = {
+                        coroutineScope.launch {
+                            setSnackBarState(false)
+                        }
+                    }) {
+                        Text("MyAction")
+                    }
+                },
+                modifier = Modifier.padding(8.dp)
+            ) {
+                Text(text = "This is a snackbar!")
             }
         }
     }
