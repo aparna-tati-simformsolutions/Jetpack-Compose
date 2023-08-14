@@ -35,5 +35,11 @@ fun SelectionComponents(navController: NavController) {
         }) {
             Text(text = "Slider")
         }
+
+        Button(onClick = {
+            navController.navigate(Screens.Switch.route)
+        }) {
+            Text(text = "Switch")
+        }
     }
 }

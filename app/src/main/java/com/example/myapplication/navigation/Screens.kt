@@ -17,4 +17,5 @@ sealed class Screens(val route: String) {
     object CheckBox: Screens("Check_Box_Screen")
     object RadioButton: Screens("Radio_Button_Screen")
     object Slider: Screens("Slider_Screen")
+    object Switch: Screens("Switch_Screen")
 }

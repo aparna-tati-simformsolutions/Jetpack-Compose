@@ -22,6 +22,7 @@ import com.example.myapplication.ui.components.ScaffoldComponent
 import com.example.myapplication.ui.components.SelectionComponents
 import com.example.myapplication.ui.components.SimpleList
 import com.example.myapplication.ui.components.SliderComponent
+import com.example.myapplication.ui.components.SwitchComponent
 import com.example.myapplication.ui.components.TextComponent
 import com.example.myapplication.ui.components.TextFieldComponent
 
@@ -93,6 +94,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.Slider.route) {
             SliderComponent()
+        }
+        composable(route = Screens.Switch.route) {
+            SwitchComponent()
         }
     }
 }
