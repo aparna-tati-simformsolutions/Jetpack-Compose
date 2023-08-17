@@ -12,10 +12,24 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.myapplication.model.ButtonData
 import com.example.myapplication.navigation.Screens
 
 @Composable
 fun Components(navController: NavController) {
+    val buttonList = listOf(
+        ButtonData(text = "Text Component", route = Screens.Text.route),
+        ButtonData(text = "TextField Component", route = Screens.TextField.route),
+        ButtonData(text = "Button Component", route = Screens.Button.route),
+        ButtonData(text = "Layouts", route = Screens.Layouts.route),
+        ButtonData(text = "Modifiers", route = Screens.Modifiers.route),
+        ButtonData(text = "List Component", route = Screens.List.route),
+        ButtonData(text = "Grid Component", route = Screens.SimpleGrid.route),
+        ButtonData(text = "Scaffold Component", route = Screens.Scaffold.route),
+        ButtonData(text = "Card Component", route = Screens.Card.route),
+        ButtonData(text = "Selection Component", route = Screens.SelectionComponent.route)
+    )
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -23,64 +37,17 @@ fun Components(navController: NavController) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = { 
-            navController.navigate(Screens.Text.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Text Component")
+        buttonList.forEach { buttonData ->  
+            ButtonView(navController = navController, buttonData = buttonData)
         }
-        
-        Button(onClick = {
-            navController.navigate(Screens.TextField.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "TextField Component")
-        }
-        
-        Button(onClick = {
-            navController.navigate(Screens.Button.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Button Component")
-        }
-        
-        Button(onClick = {
-            navController.navigate(Screens.Layouts.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Layouts")
-        }
+    }
+}
 
-        Button(onClick = {
-            navController.navigate(Screens.Modifiers.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Modifiers")
-        }
-
-        Button(onClick = {
-            navController.navigate(Screens.List.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "List Component")
-        }
-
-        Button(onClick = {
-            navController.navigate(Screens.SimpleGrid.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Grid Component")
-        }
-
-        Button(onClick = {
-            navController.navigate(Screens.Scaffold.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Scaffold Component")
-        }
-
-        Button(onClick = {
-            navController.navigate(Screens.Card.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Card Component")
-        }
-
-        Button(onClick = {
-            navController.navigate(Screens.SelectionComponent.route)
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Selection Components")
-        }
+@Composable
+fun ButtonView(navController: NavController, buttonData: ButtonData) {
+    Button(onClick = {
+        navController.navigate(buttonData.route)
+    }, modifier = Modifier.fillMaxWidth()) {
+        Text(text = buttonData.text)
     }
 }

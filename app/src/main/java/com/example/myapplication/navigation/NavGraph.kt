@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.example.myapplication.ui.components.AlertDialogComponent
 import com.example.myapplication.ui.components.ButtonComponent
 import com.example.myapplication.ui.components.CardComponent
 import com.example.myapplication.ui.components.CheckBoxComponent
@@ -101,6 +102,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.Dropdown.route) {
             DropDownComponent()
+        }
+        composable(route = Screens.Dialog.route) {
+            AlertDialogComponent()
         }
     }
 }
