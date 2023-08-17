@@ -21,6 +21,7 @@ import com.example.myapplication.ui.components.Modifiers
 import com.example.myapplication.ui.components.MyNetworkScreen
 import com.example.myapplication.ui.components.NotificationScreen
 import com.example.myapplication.ui.components.PostScreen
+import com.example.myapplication.ui.components.ProgressIndicatorComponent
 import com.example.myapplication.ui.components.RadioButtonComponent
 import com.example.myapplication.ui.components.ScaffoldComponent
 import com.example.myapplication.ui.components.SelectionComponents
@@ -108,6 +109,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.Dialog.route) {
             AlertDialogComponent()
+        }
+        composable(route = Screens.ProgressIndicators.route) {
+            ProgressIndicatorComponent()
         }
     }
 }

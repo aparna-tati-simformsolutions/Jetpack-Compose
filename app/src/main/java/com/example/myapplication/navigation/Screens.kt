@@ -20,4 +20,5 @@ sealed class Screens(val route: String) {
     object Switch: Screens("Switch_Screen")
     object Dropdown: Screens("Dropdown_Screen")
     object Dialog: Screens("Dialog_Screen")
+    object ProgressIndicators: Screens("Progress_Indicators_Screen")
 }
