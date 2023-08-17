@@ -41,5 +41,11 @@ fun SelectionComponents(navController: NavController) {
         }) {
             Text(text = "Switch")
         }
+
+        Button(onClick = {
+            navController.navigate(Screens.Dropdown.route)
+        }) {
+            Text(text = "DropDown")
+        }
     }
 }

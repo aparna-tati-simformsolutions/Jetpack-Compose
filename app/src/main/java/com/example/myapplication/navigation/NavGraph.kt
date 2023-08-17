@@ -9,6 +9,7 @@ import com.example.myapplication.ui.components.CardComponent
 import com.example.myapplication.ui.components.CheckBoxComponent
 import com.example.myapplication.ui.components.Components
 import com.example.myapplication.ui.components.CustomList
+import com.example.myapplication.ui.components.DropDownComponent
 import com.example.myapplication.ui.components.HomeScreen
 import com.example.myapplication.ui.components.JobScreen
 import com.example.myapplication.ui.components.Layouts
@@ -97,6 +98,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.Switch.route) {
             SwitchComponent()
+        }
+        composable(route = Screens.Dropdown.route) {
+            DropDownComponent()
         }
     }
 }
