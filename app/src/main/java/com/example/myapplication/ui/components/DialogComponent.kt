@@ -1,6 +1,5 @@
 package com.example.myapplication.ui.components
 
-import android.graphics.fonts.FontFamily
 import android.os.Build
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -12,6 +11,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -40,7 +40,11 @@ import com.example.myapplication.R
 @RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun AlertDialogComponent() {
-    Column {
+    Column(
+        modifier = Modifier.fillMaxSize().padding(all = 30.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         SimpleAlertDialog()
         CustomAlertDialog()
     }
@@ -49,10 +53,9 @@ fun AlertDialogComponent() {
 @Composable
 fun SimpleAlertDialog() {
     val isDialogOpen = remember { mutableStateOf(false) }
-    
     Button(onClick = {
         isDialogOpen.value = true
-    }) {
+    }, modifier = Modifier.fillMaxWidth()) {
         Text(text = "Simple Dialog")
     }
 
@@ -86,7 +89,7 @@ fun CustomAlertDialog() {
 
     Button(onClick = {
         isDialogOpen.value = true
-    }) {
+    }, modifier = Modifier.fillMaxWidth()) {
         Text(text = "Custom Dialog")
     }
 
@@ -175,7 +178,9 @@ fun DialogBoxDeleteItem(
                                 indication = null,
                                 interactionSource = interactionSource
                             ) {
-                                Toast.makeText(context, "Cancel", Toast.LENGTH_SHORT).show()
+                                Toast
+                                    .makeText(context, "Cancel", Toast.LENGTH_SHORT)
+                                    .show()
                                 onDismiss()
                             }
                             .border(
@@ -197,7 +202,9 @@ fun DialogBoxDeleteItem(
                                 indication = null,
                                 interactionSource = interactionSource
                             ) {
-                                Toast.makeText(context, "Delete", Toast.LENGTH_SHORT).show()
+                                Toast
+                                    .makeText(context, "Delete", Toast.LENGTH_SHORT)
+                                    .show()
                                 onDismiss()
                             }
                             .background(

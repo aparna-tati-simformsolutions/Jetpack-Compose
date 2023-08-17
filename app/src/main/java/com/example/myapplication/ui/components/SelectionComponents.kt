@@ -19,10 +19,10 @@ import com.example.myapplication.navigation.Screens
 fun SelectionComponents(navController: NavController) {
     val buttonList = listOf(
         ButtonData(text = "CheckBox Component", route = Screens.CheckBox.route),
-        ButtonData(text = "RadioButton Component", route = Screens.CheckBox.route),
-        ButtonData(text = "Slider Component", route = Screens.CheckBox.route),
-        ButtonData(text = "Switch Component", route = Screens.CheckBox.route),
-        ButtonData(text = "DropDown Component", route = Screens.CheckBox.route),
+        ButtonData(text = "RadioButton Component", route = Screens.RadioButton.route),
+        ButtonData(text = "Slider Component", route = Screens.Slider.route),
+        ButtonData(text = "Switch Component", route = Screens.Switch.route),
+        ButtonData(text = "DropDown Component", route = Screens.Dropdown.route),
         ButtonData(text = "Dialog Component", route = Screens.Dialog.route)
     )
 

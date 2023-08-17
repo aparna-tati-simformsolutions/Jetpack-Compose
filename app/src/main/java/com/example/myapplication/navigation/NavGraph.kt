@@ -1,5 +1,7 @@
 package com.example.myapplication.navigation
 
+import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
@@ -28,6 +30,7 @@ import com.example.myapplication.ui.components.SwitchComponent
 import com.example.myapplication.ui.components.TextComponent
 import com.example.myapplication.ui.components.TextFieldComponent
 
+@RequiresApi(Build.VERSION_CODES.Q)
 @Composable
 fun NavGraph(navController: NavHostController) {
     NavHost(
