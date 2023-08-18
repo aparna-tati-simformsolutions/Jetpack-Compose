@@ -21,12 +21,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import kotlin.math.exp
 
 @Preview
 @Composable
 fun LazyColumnComponent() {
-    RecyclerView()
+    ColumnRecyclerView()
 }
 
 @Composable
@@ -79,7 +78,7 @@ fun ListItem(name: String) {
 }
 
 @Composable
-fun RecyclerView(names: List<String> = List(1000) { "$it" }) {
+fun ColumnRecyclerView(names: List<String> = List(1000) { "$it" }) {
     LazyColumn(modifier = Modifier.padding(vertical = 4.dp)) {
         items(names) { name ->
             ListItem(name = name)
