@@ -27,7 +27,8 @@ fun Components(navController: NavController) {
         ButtonData(text = "Grid Component", route = Screens.SimpleGrid.route),
         ButtonData(text = "Scaffold Component", route = Screens.Scaffold.route),
         ButtonData(text = "Card Component", route = Screens.Card.route),
-        ButtonData(text = "Selection Component", route = Screens.SelectionComponent.route)
+        ButtonData(text = "Selection Component", route = Screens.SelectionComponent.route),
+        ButtonData(text = "Lazy Component", route = Screens.Lazy.route)
     )
 
     Column(

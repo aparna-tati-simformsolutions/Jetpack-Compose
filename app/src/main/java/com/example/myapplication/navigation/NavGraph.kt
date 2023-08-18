@@ -16,6 +16,9 @@ import com.example.myapplication.ui.components.DropDownComponent
 import com.example.myapplication.ui.components.HomeScreen
 import com.example.myapplication.ui.components.JobScreen
 import com.example.myapplication.ui.components.Layouts
+import com.example.myapplication.ui.components.LazyColumnComponent
+import com.example.myapplication.ui.components.LazyComponent
+import com.example.myapplication.ui.components.LazyRowComponent
 import com.example.myapplication.ui.components.ListComponent
 import com.example.myapplication.ui.components.Modifiers
 import com.example.myapplication.ui.components.MyNetworkScreen
@@ -112,6 +115,15 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.ProgressIndicators.route) {
             ProgressIndicatorComponent()
+        }
+        composable(route = Screens.Lazy.route) {
+            LazyComponent(navController = navController)
+        }
+        composable(route = Screens.LazyRow.route) {
+            LazyRowComponent()
+        }
+        composable(route = Screens.LazyColumn.route) {
+            LazyColumnComponent()
         }
     }
 }

@@ -21,4 +21,7 @@ sealed class Screens(val route: String) {
     object Dropdown: Screens("Dropdown_Screen")
     object Dialog: Screens("Dialog_Screen")
     object ProgressIndicators: Screens("Progress_Indicators_Screen")
+    object Lazy: Screens("Lazy_Screen")
+    object LazyColumn: Screens(route = "Lazy_Column_Screen")
+    object LazyRow: Screens(route = "Lazy_Row_Screen")
 }
