@@ -23,6 +23,7 @@ import com.example.myapplication.ui.components.ListComponent
 import com.example.myapplication.ui.components.Modifiers
 import com.example.myapplication.ui.components.MyNetworkScreen
 import com.example.myapplication.ui.components.NotificationScreen
+import com.example.myapplication.ui.components.PagerComponent
 import com.example.myapplication.ui.components.PostScreen
 import com.example.myapplication.ui.components.ProgressIndicatorComponent
 import com.example.myapplication.ui.components.RadioButtonComponent
@@ -124,6 +125,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.LazyColumn.route) {
             LazyColumnComponent()
+        }
+        composable(route = Screens.Pager.route) {
+            PagerComponent()
         }
     }
 }

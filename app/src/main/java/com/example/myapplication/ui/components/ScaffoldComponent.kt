@@ -1,5 +1,6 @@
 package com.example.myapplication.ui.components
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -40,6 +41,7 @@ import com.example.myapplication.navigation.BottomNavigationScreens
 import com.example.myapplication.navigation.NavGraph
 import kotlinx.coroutines.launch
 
+@SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun ScaffoldComponent() {
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
