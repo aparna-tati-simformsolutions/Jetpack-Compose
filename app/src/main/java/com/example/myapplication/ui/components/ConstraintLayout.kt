@@ -32,14 +32,9 @@ fun ConstraintLayoutDemo(navController: NavController) {
             Text(text = "Login Demo")
         }
         Button(onClick = {
-
+            navController.navigate(Screens.ConstraintLayoutGuideline.route)
         }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Chains Demo")
-        }
-        Button(onClick = {
-
-        }, modifier = Modifier.fillMaxWidth()) {
-            Text(text = "Barrier Demo")
+            Text(text = "Guideline Demo")
         }
     }
 }

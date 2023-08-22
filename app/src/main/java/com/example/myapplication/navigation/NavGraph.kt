@@ -12,6 +12,7 @@ import com.example.myapplication.ui.components.CardComponent
 import com.example.myapplication.ui.components.CheckBoxComponent
 import com.example.myapplication.ui.components.Components
 import com.example.myapplication.ui.components.ConstraintLayoutDemo
+import com.example.myapplication.ui.components.ConstraintLayoutGuidelineAndChain
 import com.example.myapplication.ui.components.ConstraintLayoutSimpleDemo
 import com.example.myapplication.ui.components.CustomList
 import com.example.myapplication.ui.components.DropDownComponent
@@ -140,6 +141,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.LoginScreenUsingConstraintLayout.route) {
             LoginScreenUsingConstraintLayout()
+        }
+        composable(route = Screens.ConstraintLayoutGuideline.route) {
+            ConstraintLayoutGuidelineAndChain()
         }
     }
 }
