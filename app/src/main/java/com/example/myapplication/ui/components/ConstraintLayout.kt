@@ -27,7 +27,7 @@ fun ConstraintLayoutDemo(navController: NavController) {
             Text(text = "Simple Demo")
         }
         Button(onClick = {
-
+            navController.navigate(Screens.LoginScreenUsingConstraintLayout.route)
         }, modifier = Modifier.fillMaxWidth()) {
             Text(text = "Login Demo")
         }

@@ -27,4 +27,5 @@ sealed class Screens(val route: String) {
     object Pager: Screens(route = "Pager_Screen")
     object ConstraintLayout: Screens(route = "Constraint_Layout")
     object ConstraintLayoutSimpleDemo: Screens(route = "Constraint_Layout_Simple_Demo")
+    object LoginScreenUsingConstraintLayout: Screens(route = "Login_Screen")
 }

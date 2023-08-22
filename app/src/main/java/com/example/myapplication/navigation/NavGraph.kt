@@ -22,6 +22,7 @@ import com.example.myapplication.ui.components.LazyColumnComponent
 import com.example.myapplication.ui.components.LazyComponent
 import com.example.myapplication.ui.components.LazyRowComponent
 import com.example.myapplication.ui.components.ListComponent
+import com.example.myapplication.ui.components.LoginScreenUsingConstraintLayout
 import com.example.myapplication.ui.components.Modifiers
 import com.example.myapplication.ui.components.MyNetworkScreen
 import com.example.myapplication.ui.components.NotificationScreen
@@ -136,6 +137,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.ConstraintLayoutSimpleDemo.route) {
             ConstraintLayoutSimpleDemo()
+        }
+        composable(route = Screens.LoginScreenUsingConstraintLayout.route) {
+            LoginScreenUsingConstraintLayout()
         }
     }
 }
