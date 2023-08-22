@@ -28,7 +28,8 @@ fun Components(navController: NavController) {
         ButtonData(text = "Scaffold Component", route = Screens.Scaffold.route),
         ButtonData(text = "Card Component", route = Screens.Card.route),
         ButtonData(text = "Selection Component", route = Screens.SelectionComponent.route),
-        ButtonData(text = "Lazy Component", route = Screens.Lazy.route)
+        ButtonData(text = "Lazy Component", route = Screens.Lazy.route),
+        ButtonData(text = "Constraint Layout", route = Screens.ConstraintLayout.route)
     )
 
     Column(

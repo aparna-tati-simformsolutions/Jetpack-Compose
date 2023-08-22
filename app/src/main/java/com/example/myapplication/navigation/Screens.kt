@@ -25,4 +25,6 @@ sealed class Screens(val route: String) {
     object LazyColumn: Screens(route = "Lazy_Column_Screen")
     object LazyRow: Screens(route = "Lazy_Row_Screen")
     object Pager: Screens(route = "Pager_Screen")
+    object ConstraintLayout: Screens(route = "Constraint_Layout")
+    object ConstraintLayoutSimpleDemo: Screens(route = "Constraint_Layout_Simple_Demo")
 }
