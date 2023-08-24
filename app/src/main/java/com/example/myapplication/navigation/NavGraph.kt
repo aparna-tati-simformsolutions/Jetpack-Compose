@@ -15,6 +15,7 @@ import com.example.myapplication.ui.components.ConstraintLayoutDemo
 import com.example.myapplication.ui.components.ConstraintLayoutGuidelineAndChain
 import com.example.myapplication.ui.components.ConstraintLayoutSimpleDemo
 import com.example.myapplication.ui.components.CustomList
+import com.example.myapplication.ui.components.CustomTab
 import com.example.myapplication.ui.components.DropDownComponent
 import com.example.myapplication.ui.components.HomeScreen
 import com.example.myapplication.ui.components.JobScreen
@@ -144,6 +145,9 @@ fun NavGraph(navController: NavHostController) {
         }
         composable(route = Screens.ConstraintLayoutGuideline.route) {
             ConstraintLayoutGuidelineAndChain()
+        }
+        composable(route = Screens.CustomTabLayout.route) {
+            CustomTab()
         }
     }
 }

@@ -29,4 +29,5 @@ sealed class Screens(val route: String) {
     object ConstraintLayoutSimpleDemo: Screens(route = "Constraint_Layout_Simple_Demo")
     object LoginScreenUsingConstraintLayout: Screens(route = "Login_Screen")
     object ConstraintLayoutGuideline: Screens(route = "Guideline")
+    object CustomTabLayout: Screens(route = "TabLayout")
 }
